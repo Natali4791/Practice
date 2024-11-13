@@ -1,0 +1,23 @@
+body {
+  background-color: cornsilk;
+}
+/* 1: Установите CSS для всех тегов абзацев на "color: blue" --*/
+p {
+  color: blue;
+}
+/* Установите CSS для всех элементов с классом "item" на "font-size: 30px"*/
+.item {
+  font-size: 30px;
+}
+/*Установите CSS для элемента с идентификатором "demo-selector" на "color: red"*/
+#demo-selector {
+  color: red;
+}
+/*Установите CSS для элементов li, у которых атрибут "value" равен "7" на "color: darkblue"*/
+li[value="7"] {
+  color: darkblue;
+}
+/*Установите для всех элементов "text-align: center"*/
+* {
+  text-align: center;
+}
