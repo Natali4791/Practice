@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Несколько квадратов с position: relative</title>
+    <style>
+      /*кнопки*/
+      header {
+        padding: 10px 0px;
+        text-align: center;
+      }
+
+      /* псевдосимволы перед кнопками*/
+      ul {
+        list-style: none;
+      }
+
+      /* рамки всех прямоугольников*/
+      div {
+        border: 20px double;
+      }
+
+      /* стиль кнопок*/
+      button {
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center
+        text-decoration: solid;
+        cursor: auto;
+        border: 2px solid #91a3b0;
+        color: #8c0c6a;
+        background-color: #e0f904;
+        border-radius: 10px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      button:hover {
+        background-color: #db5334;
+        color: #1e0202;
+      }
+
+      .div-scroll {
+        height: 1000px;
+        background-color: #e8b160;
+      }
+
+      .relative-container {
+        top: 0px;
+        left: 0px;
+        position: relative;
+        background-color: #34c8db;
+      }
+
+      .first-rectangle,
+      .second-rectangle,
+      .third-rectangle {
+        width: 200px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .first-rectangle {
+        background-color: white;
+        top: 0px;
+        left: 0px;
+
+      }
+
+      .second-rectangle {
+        background-color: blue;
+        top: 30px;
+        left: 20px;
+
+      }
+
+      .third-rectangle {
+        background-color: red;
+        top: 60px;
+        left: 40px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <ul>
+        <li><button onclick="changePosition('static')">Статическое позиционирование</button></li>
+        <li>
+          <button onclick="changePosition('relative')">Относительное позиционирование</button>
+        </li>
+        <li><button onclick="changePosition('absolute')">Абсолютное позиционирование</button></li>
+        <li><button onclick="changePosition('fixed')">Фиксированное позиционирование</button></li>
+        <li><button onclick="changeZIndex()">Изменить Z-Индекс</button></li>
+      </ul>
+    </header>
+
+    <div class="relative-container">
+      <div class="first-rectangle" id="firstRectangle"></div>
+      <div class="second-rectangle" id="secondRectangle"></div>
+      <div class="third-rectangle" id="thirdRectangle"></div>
+    </div>
+
+    <div class="div-scroll"></div>
+
+    <script>
+      function changePosition(position) {
+        var rectangles = document.querySelectorAll(
+          ".first-rectangle, .second-rectangle, .third-rectangle"
+        );
+
+        rectangles.forEach(function (rectangle) {
+          rectangle.style.position = position;
+        });
+      }
+      function changeZIndex() {
+        var redRectangle = document.getElementById("thirdRectangle");
+        var currentZIndex = parseInt(redRectangle.style.zIndex) || 1; // Значение по умолчанию или текущее значение
+        redRectangle.style.zIndex = currentZIndex * -1;
+      }
+    </script>
+  </body>
+</html>

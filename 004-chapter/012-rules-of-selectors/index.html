@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Правила приоритета селекторов в CSS</title>
+    <style>
+      /* #mainHeader {
+        background-color: brown;
+      } */
+      h1[draggable="true"] {
+        background-color: red;
+      }
+      .headerText {
+        background-color: yellow;
+      }
+      h1 {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="headerText" id="mainHeader" draggable="true">Текст заголовка</h1>
+  </body>
+</html>
