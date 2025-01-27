@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Grid Layout</title>
+    <style>
+        html {
+          /* font-size: 50px; */
+          /* width: 300px; */
+          /* height: 100px; */
+        }
+        body {
+          font-size: 35px;
+          padding: 10px;
+          margin: 10px;
+          display: flex;
+          justify-content: start;
+          align-items: start
+          height: 98vh;
+          width: 100%;
+        }
+        .container {
+          display: grid;
+          margin: 10px;
+          padding: 10px;
+          grid-gap: 10px;
+          background-color: white;
+          grid-template-columns: 300px auto minmax(200px, 300px);
+          /* grid-template-rows: repeat(3, 100px)+70px; */
+
+
+          /* нужно чтобы вновь добавленные строки были высотой 70px */
+          grid-template-rows: repeat(3, 100px);
+          grid-auto-rows: 70px;
+
+        }
+        .item {
+          background-color: #465f68;
+          color: white;
+        }
+
+      .fixed {
+        /* width: 300px; */
+        /* height: 100px; */
+
+        }
+        .expands {
+          /* display: flex; */
+          /* flex: 1 1 0; */
+          /* flex-wrap: wrap; */
+          flex-basis: 100px;
+        }
+
+        .flexible {
+          /* columns: minmax(200px, 300px); */
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item fixed">1 300px x 100px</div>
+      <div class="item expands">2 😎 ??? x 100px</div>
+      <div class="item flexible">3 200px — 300px x 100px</div>
+      <div class="item fixed">4 300px x 100px</div>
+      <div class="item expands">5 😎 ??? x 100px</div>
+      <div class="item flexible">6 200px — 300px x 100px</div>
+      <div class="item fixed">7 300px x 100px</div>
+      <div class="item expands">8 😎 ??? x 100px</div>
+      <div class="item flexible">9 200px — 300px x 100px</div>
+
+      <div class="item fixed">10 🤪 300px x 70px</div>
+      <div class="item fixed">11 🤪 300px x 70px</div>
+      <div class="item fixed">12 🤪 300px x 70px</div>
+      <div class="item fixed">13 🤪 300px x 70px</div>
+      <div class="item fixed">14 🤪 300px x 70px</div>
+      <div class="item fixed">15 🤪 300px x 70px</div>
+      <div class="item fixed">16 🤪 300px x 70px</div>
+      <div class="item fixed">72 🤪 300px x 70px</div>
+      <div class="item fixed">18 🤪 300px x 70px</div>
+      <div class="item fixed">19 🤪 300px x 70px</div>
+    </div>
+  </body>
+</html>
