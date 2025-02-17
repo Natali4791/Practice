@@ -1,0 +1,181 @@
+Как могло бы выглядеть решение на разных языках
+C++
+#include <iostream>
+#include <cmath>
+
+std::pair<double, double> rotatePoint(double a, double b, double q)
+{
+    // Преобразуем угол из градусов в радианы
+    double angleInRadians = q * (M_PI / 180.0);
+
+    // Вычисляем новые координаты после поворота
+    double ar = a * cos(angleInRadians) - b * sin(angleInRadians);
+    double br = a * sin(angleInRadians) + b * cos(angleInRadians);
+
+    // Округляем координаты до двух знаков после запятой и возвращаем пару новых координат
+    ar = round(ar * 100) / 100.0;
+    br = round(br * 100) / 100.0;
+
+    return std::make_pair(ar, br);
+}
+
+int main()
+{
+    // Исходные координаты точки
+    double oldX = 2.0;
+    double oldY = 0.0;
+
+    // Угол поворота в градусах
+    double angleInDegrees = 90.0;
+
+    // Вызов функции rotatePoint
+    std::pair<double, double> result = rotatePoint(oldX, oldY, angleInDegrees);
+    double newX = result.first;
+    double newY = result.second;
+    // Выводим новые координаты точки
+    std::cout << "Новые координаты после поворота: (" << newX << ", " << newY << ")" << std::endl;
+
+    return 0;
+}
+Java
+public class RotatePoint {
+    public static double[] rotatePoint(double a, double b, double q) {
+        // Преобразуем угол из градусов в радианы
+        double angleInRadians = q * (Math.PI / 180.0);
+
+        // Вычисляем новые координаты после поворота
+        double ar = a * Math.cos(angleInRadians) - b * Math.sin(angleInRadians);
+        double br = a * Math.sin(angleInRadians) + b * Math.cos(angleInRadians);
+
+        // Округляем координаты до двух знаков после запятой и возвращаем массив из
+        // новых координат
+        ar = Math.round(ar * 100) / 100.0;
+        br = Math.round(br * 100) / 100.0;
+
+        return new double[] { ar, br };
+    }
+
+    public static void main(String[] args) {
+        // Исходные координаты точки
+        double oldX = 2.0;
+        double oldY = 0.0;
+
+        // Угол поворота в градусах
+        double angleInDegrees = 90.0;
+
+        // Вызов функции rotatePoint
+        double[] newCoordinates = rotatePoint(oldX, oldY, angleInDegrees);
+
+        // Выводим новые координаты точки
+        System.out.println("Новые координаты после поворота: (" + newCoordinates[0] + ", " + newCoordinates[1] + ")");
+    }
+}
+Python
+import math
+
+def rotate_point(a: float, b: float, q: float) -> tuple:
+    # Преобразуем угол из градусов в радианы
+    angle_in_radians = q * (math.pi / 180.0)
+
+    # Вычисляем новые координаты после поворота
+    ar = a * math.cos(angle_in_radians) - b * math.sin(angle_in_radians)
+    br = a * math.sin(angle_in_radians) + b * math.cos(angle_in_radians)
+
+    # Округляем координаты до двух знаков после запятой и возвращаем кортеж из новых координат
+    return round(ar, 2), round(br, 2)
+
+# Исходные координаты точки
+old_x = 2.0
+old_y = 0.0
+
+# Угол поворота в градусах
+angle_in_degrees = 90.0
+
+# Вызов функции rotate_point
+new_x, new_y = rotate_point(old_x, old_y, angle_in_degrees)
+
+# Выводим новые координаты точки
+print(f"Новые координаты после поворота: ({new_x}, {new_y})")
+C#
+(double, double) RotatePoint(double a, double b, double q)
+{
+    // Преобразуем угол из градусов в радианы
+    double angleInRadians = q * (Math.PI / 180.0);
+
+    // Вычисляем новые координаты после поворота
+    double ar = a * Math.Cos(angleInRadians) - b * Math.Sin(angleInRadians);
+    double br = a * Math.Sin(angleInRadians) + b * Math.Cos(angleInRadians);
+
+    // Возвращаем кортеж из новых координат
+    return (Math.Round(ar, 2), Math.Round(br, 2));
+}
+
+// Исходные координаты точки
+double oldX = 2.0;
+double oldY = 0.0;
+
+// Угол поворота в градусах
+double angleInDegrees = 90.0;
+
+// Вызов метода RotatePoint
+var (newX, newY) = RotatePoint(oldX, oldY, angleInDegrees);
+
+// Выводим новые координаты точки
+Console.WriteLine($"Новые координаты после поворота: ({newX}, {newY})");
+JavaScript
+const rotatePoint = (a, b, q) => {
+    // Преобразуем угол из градусов в радианы
+    const angleInRadians = q * (Math.PI / 180.0);
+
+    // Вычисляем новые координаты после поворота
+    const ar = a * Math.cos(angleInRadians) - b * Math.sin(angleInRadians);
+    const br = a * Math.sin(angleInRadians) + b * Math.cos(angleInRadians);
+
+    // Округляем координаты до двух знаков после запятой и возвращаем массив из новых координат
+    return [ar.toFixed(2), br.toFixed(2)];
+}
+
+// Исходные координаты точки
+const oldX = 2.0;
+const oldY = 0.0;
+
+// Угол поворота в градусах
+const angleInDegrees = 90.0;
+
+// Вызов функции rotatePoint
+const [newX, newY] = rotatePoint(oldX, oldY, angleInDegrees);
+
+// Выводим новые координаты точки
+console.log(`Новые координаты после поворота: (${newX}, ${newY})`);
+Swift
+import Foundation
+
+func rotatePoint(x: Double, y: Double, angleInDegrees: Double) -> (Double, Double) {
+    // Преобразуем угол из градусов в радианы
+    let angleInRadians = angleInDegrees * Double.pi / 180.0
+
+    // Вычисляем новые координаты после поворота
+    let newX = x * cos(angleInRadians) - y * sin(angleInRadians)
+    let newY = x * sin(angleInRadians) + y * cos(angleInRadians)
+
+    // Округляем координаты до двух знаков после запятой
+    let roundedNewX = round(newX * 100) / 100.0
+    let roundedNewY = round(newY * 100) / 100.0
+
+    // Возвращаем кортеж из новых координат
+    return (roundedNewX, roundedNewY)
+}
+
+// Исходные координаты точки
+let oldX = 2.0
+let oldY = 0.0
+
+// Угол поворота в градусах
+let angleInDegrees = 90.0
+
+// Вызов функции rotatePoint
+let (newX, newY) = rotatePoint(x: oldX, y: oldY, angleInDegrees: angleInDegrees)
+
+// Выводим новые координаты точки
+print("Новые координаты после поворота: (\(newX), \(newY))")
+ 

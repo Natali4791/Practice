@@ -1,0 +1,5 @@
+A(a, b)
+A'(a_r, b_r)
+
+a_r = a cos q - b sin q
+b_r = a * sin q + b * cos q
