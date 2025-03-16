@@ -22,3 +22,23 @@ console.log(`Boolean(strToBool) ${Boolean(strToBool)}`);
 let strToBool1 = "";
 console.log(`Boolean(strToBool1) ${Boolean(strToBool1)}`);
 console.log();
+
+// 4.1 Неявное преобразование числа к строке
+let implicitConversion = 10 + "20";
+console.log(`10 + "20" получим строку: ${implicitConversion}`);
+// 4.2 Неявное преобразование строки к числу
+let implicitConversion1 = 10 + +"20";
+console.log(`10 + +"20" получим число: ${implicitConversion1}`);
+console.log();
+
+// 5. Неявное преобразование при сравнении. JS - это язык динамической типизации
+let num = 10;
+let str = "10";
+console.log(`10 == "10" будет ${num == str}`);
+let num1 = 11;
+let str1 = "10";
+console.log(`11 == "10" будет ${num1 == str1}`);
+let num2 = 10;
+let str2 = "10";
+console.log(`10 === "10" будет ${num2 === str2}`);
+console.log();
