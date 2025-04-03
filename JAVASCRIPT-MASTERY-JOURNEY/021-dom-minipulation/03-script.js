@@ -13,8 +13,10 @@ animateBtn.addEventListener("click", function () {
     box.style.transition = "width 1s ease-in-out, height 1s ease-in-out";
     box.style.width = "200px";
     box.style.height = "200px";
-    box.style.background = "green";
-    box.style.border = "duble 10px black shade";
+    box.style.background = "yellow";
+    box.style.border = "solid 50px pink";
+    box.style.color = "black";
+    // box.style.radius = "50%";
     // box.style.border.radius = 50%;
   }, 1000);
 });

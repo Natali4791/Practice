@@ -1,6 +1,7 @@
 function btnClick() {
   // Изменяем текст в контейнере
-  textContainer.innerHTML = "<b><u>Новый текст</u></b>";
+  // textContainer.innerHTML = "<b><u>Новый текст</u></b>";
+  textContainer.textContent = `Неформатированный текст`;
 }
 
 // Получаем ссылку на кнопку и контейнер текста
