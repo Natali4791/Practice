@@ -1,4 +1,4 @@
-//Создание массива четных чисел из заданного
+console.log(`numbers = [1, 2, 3, 4, 15, 1, 2, 3, 40, 5, 1, 9]`);
 const numbers = [1, 2, 3, 4, 15, 1, 2, 3, 40, 5, 1, 9];
 console.log(`Создание массива четных чисел из заданного массива`);
 const result = [];
@@ -10,7 +10,6 @@ for (let i = 0; i < numbers.length; i++) {
 }
 console.log(result);
 
-//Создание массива чисел кратных пяти из заданного
 const numbers1 = [1, 2, 3, 4, 15, 1, 2, 3, 40, 5, 1, 9];
 console.log(`Создание массива чисел кратных пяти из заданного массива`);
 console.log(`с помощью функции getItems(items, div)`);
@@ -28,8 +27,6 @@ function getItems(items, div) {
 const result2 = getItems(numbers1, 5);
 console.log(result2);
 
-//Создание массива четных чисел меньше нуля из заданного массива
-//функция в качестве аргумента
 const numbers2 = [1, 2, 3, -4, -15, 1, -2, 3, -40, 5, 1, -9];
 console.log(`Создание массива четных чисел, включая меньше нуля из заданного массива`);
 console.log(`с помощью функции getItems(items, checkItem`);
@@ -61,3 +58,33 @@ console.log(result7);
 console.log(`теперь можно просто менять условие getItems1(numbers2, (e) => e > 0)`);
 const result8 = getItems1(numbers2, (e) => e > 0);
 console.log(result8);
+
+console.log(`Метод filter для массивов numbers2.filter((e) => e < 0)`);
+const resFilter = numbers2.filter((e) => e < 0);
+console.log(resFilter);
+console.log();
+console.log(`numbers3 = [1, 2, 3, 4]`);
+const numbers3 = [1, 2, 3, 4];
+function select(items, logic) {
+  const result = [];
+
+  for (let i = 0; i < items.length; i++) {
+    const element = items[i];
+    result.push(logic(element));
+  }
+  return result;
+}
+res = select(numbers3, (e) => e ** 2);
+console.log(`select(numbers3, (e) => e ** 2):`);
+console.log(res);
+const resSelect = select(numbers3, (e) => Math.pow(e, 2));
+console.log(`select(numbers3, (e) => Math.pow(e, 2))`);
+console.log(resSelect);
+console.log();
+const resSelect1 = select(numbers3, (e) => e + 1);
+console.log(`select(numbers3, (e) => e + 1)`);
+console.log(resSelect1);
+console.log(`numbers3.map((e) => e ** 2)`);
+const resSelect2 = numbers3.map((e) => e ** 2);
+console.log(resSelect2);
+console.log();
