@@ -1,7 +1,17 @@
-//npm install //в терминале
-// readline-sync // Подключаем модуль readline-sync const readlineSync =
-// require("readline-sync"); // Запрашиваем имя пользователя
-// let name = readlineSync.question("Как тебя
-// зовут? ");
-// Выводим приветствие
-// console.log(`Привет, ${name}!`);
+const readlineSync = require("readline-sync");
+console.log(`В конкретной папке проекта`);
+console.log(`В терминале Инициация проекта: npm init -y`);
+console.log(`В файле packet.json в scripts добавляем "start.node.index.js";`);
+console.log(`В терминале Подключаем библиотеку чтения из терминала: npm install readline-sync`);
+console.log(`в файле index.js создаем функцию считывания из терминала`);
+console.log(`Считывание значений из терминала`);
+console.log(`const readlineSync = require("readline-sync");`);
+console.log(`В окошке браузера: считать - prompt; вывести на экран - alert `);
+console.log(`в терминале VScode: считать - readlineSync.question; вывести на экран - console.log`);
+console.log(`вместо prompt ставим readlineSync.question`);
+console.log(`let input = prompt("Введите числа через запятую:")`);
+console.log(`let input = readlineSync.question("Enter numbers separated by commas:")`);
+console.log(`вместо alert пишем console.log`);
+console.log(`alert("Среднее арифметическое: " + average)`);
+console.log(`console.log("Среднее арифметическое: " + average)`);
+console.log(`readlineSync.question`);
