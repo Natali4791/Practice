@@ -1,5 +1,6 @@
 const readlineSync = require("readline-sync");
 console.log(`В конкретной папке проекта`);
+console.log(`npm instal readline-sync`);
 console.log(`В терминале Инициация проекта: npm init -y`);
 console.log(`В файле packet.json в scripts добавляем "start.node.index.js";`);
 console.log(`В терминале Подключаем библиотеку чтения из терминала: npm install readline-sync`);

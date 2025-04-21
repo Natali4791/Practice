@@ -6,48 +6,46 @@ console.log(`function compressArray(arr) {
     return arr.filter(elem => elem !== 0);
 }`);
 
-// 1. Запрос количества элементов массива
+console.log(`Запрос количества элементов массива`);
 console.log(`Введите количество чисел массива: `);
 const input = readlineSync.question("Enter the number of numbers in the array: ");
 
-// Генерация массива случайных чисел
+console.log(`Генерация массива случайных чисел от -50 до 50`);
 function generateRandomArray(size) {
   const arr = [];
   for (let i = 0; i < size; i++) {
-    arr.push(Math.floor(Math.random() * 100) - 50); // Случайные числа от 0 до 99
+    arr.push(Math.floor(Math.random() * 100) - 50);
   }
   return arr;
 }
-
-// Вывод массива
+console.log();
+console.log(`Вывод массива`);
 function printArray(arr) {
-  // console.log(randomArray);
-  console.log(arr.join(", "));
+  // console.log(arr.join(", "));
+  console.log(`[${arr.join(", ")}]`);
 }
-
-// Печать исходного массива
+console.log();
+console.log(`Печать исходного массива`);
 const randomArray = generateRandomArray(input);
 console.log("Исходный массив:");
 printArray(randomArray);
 
-// Сжатие массива
+console.log(`Сжатие массива`);
 function compressArray(arr) {
   return arr.filter((elem) => elem !== 0);
 }
-
 const elem = randomArray.filter(function (elem) {
   return elem !== 0;
 });
 // console.log(elem);
-
 const sortedArray = compressArray(randomArray);
 
-// Вывод сжатого массива
+console.log(`Вывод сжатого массива`);
 console.log("Сжатый массив:");
 printArray(sortedArray);
 console.log(`конец`);
-
-//Проба
+console.log();
+console.log(`Для наглядности нули в исходном массиве`);
 console.log(
   `Функция filter также принимает функцию и использует её для выбора определенных чисел массива`
 );
@@ -59,3 +57,4 @@ const elem1 = array.filter(function (elem1) {
 });
 console.log("Сжатый массив:");
 console.log(elem1);
+console.log();
