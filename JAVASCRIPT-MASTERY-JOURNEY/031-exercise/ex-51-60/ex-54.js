@@ -24,7 +24,7 @@ function printArray(arr) {
 }
 console.log(`Печать сгенерированного рандомного массива`);
 const randomArray = generateRandomArray(input);
-console.log("Исходный массив:");
+console.log("Сгенерированный рандомный массив:");
 printArray(randomArray);
 
 console.log(`Введите искомое число в массиве: `);
@@ -34,10 +34,10 @@ function findIndex(arr, target) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == target) {
       console.log(`индекс числа в массиве: ${i}`);
-      return;
+      return i;
     }
   }
-  console.log("число в массиве не найдено");
-  return;
+  console.log("число в массиве не найдено, вернуть '-1'");
+  return -1;
 }
 console.log(findIndex(randomArray, number));
